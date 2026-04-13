@@ -1,0 +1,147 @@
+import type { Config } from 'tailwindcss'
+
+const config: Config = {
+  content: [
+    './pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './components/**/*.{js,ts,jsx,tsx,mdx}',
+    './app/**/*.{js,ts,jsx,tsx,mdx}',
+  ],
+  theme: {
+    extend: {
+      colors: {
+        // Core palette — Bloomberg-meets-elite-agency
+        bg: {
+          DEFAULT: '#070A0E',
+          surface: '#0D1117',
+          elevated: '#141C24',
+          card: '#0F151E',
+        },
+        border: {
+          DEFAULT: 'rgba(255,255,255,0.06)',
+          subtle: 'rgba(255,255,255,0.03)',
+          accent: 'rgba(0,212,255,0.18)',
+          gold: 'rgba(201,168,76,0.25)',
+        },
+        text: {
+          primary: '#E8EDF2',
+          secondary: '#6B8098',
+          muted: '#3D5166',
+          inverse: '#070A0E',
+        },
+        accent: {
+          cyan: '#00D4FF',
+          'cyan-dim': 'rgba(0,212,255,0.12)',
+          green: '#00E5A0',
+          'green-dim': 'rgba(0,229,160,0.12)',
+          red: '#FF4444',
+          'red-dim': 'rgba(255,68,68,0.12)',
+          amber: '#F59E0B',
+          'amber-dim': 'rgba(245,158,11,0.12)',
+          gold: '#C9A84C',
+          'gold-dim': 'rgba(201,168,76,0.10)',
+        },
+      },
+      fontFamily: {
+        sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
+        serif: ['var(--font-playfair)', 'Georgia', 'serif'],
+        mono: ['var(--font-jetbrains)', 'JetBrains Mono', 'monospace'],
+        display: ['var(--font-inter)', 'system-ui', 'sans-serif'],
+      },
+      fontSize: {
+        '2xs': ['0.65rem', { lineHeight: '1rem' }],
+        xs: ['0.75rem', { lineHeight: '1.125rem' }],
+        sm: ['0.875rem', { lineHeight: '1.375rem' }],
+        base: ['1rem', { lineHeight: '1.625rem' }],
+        lg: ['1.125rem', { lineHeight: '1.75rem' }],
+        xl: ['1.25rem', { lineHeight: '1.875rem' }],
+        '2xl': ['1.5rem', { lineHeight: '2rem' }],
+        '3xl': ['1.875rem', { lineHeight: '2.375rem' }],
+        '4xl': ['2.25rem', { lineHeight: '2.75rem', letterSpacing: '-0.02em' }],
+        '5xl': ['3rem', { lineHeight: '3.5rem', letterSpacing: '-0.03em' }],
+        '6xl': ['3.75rem', { lineHeight: '4.25rem', letterSpacing: '-0.04em' }],
+        '7xl': ['4.5rem', { lineHeight: '5rem', letterSpacing: '-0.04em' }],
+        '8xl': ['6rem', { lineHeight: '6.5rem', letterSpacing: '-0.05em' }],
+        '9xl': ['8rem', { lineHeight: '8.5rem', letterSpacing: '-0.05em' }],
+      },
+      spacing: {
+        '18': '4.5rem',
+        '22': '5.5rem',
+        '30': '7.5rem',
+        '34': '8.5rem',
+        '38': '9.5rem',
+        '42': '10.5rem',
+        '46': '11.5rem',
+        '50': '12.5rem',
+        '54': '13.5rem',
+        '58': '14.5rem',
+        '62': '15.5rem',
+        '66': '16.5rem',
+        '70': '17.5rem',
+        '74': '18.5rem',
+        '78': '19.5rem',
+        '82': '20.5rem',
+        '86': '21.5rem',
+        '90': '22.5rem',
+        '94': '23.5rem',
+        '98': '24.5rem',
+      },
+      borderRadius: {
+        xs: '0.125rem',
+        sm: '0.25rem',
+        DEFAULT: '0.375rem',
+        md: '0.5rem',
+        lg: '0.75rem',
+        xl: '1rem',
+        '2xl': '1.5rem',
+      },
+      boxShadow: {
+        'glow-cyan': '0 0 20px rgba(0,212,255,0.15), 0 0 60px rgba(0,212,255,0.05)',
+        'glow-cyan-strong': '0 0 30px rgba(0,212,255,0.3), 0 0 80px rgba(0,212,255,0.1)',
+        'glow-gold': '0 0 20px rgba(201,168,76,0.15)',
+        'glass': '0 1px 0 rgba(255,255,255,0.05) inset, 0 8px 32px rgba(0,0,0,0.4)',
+        'card': '0 1px 0 rgba(255,255,255,0.04) inset, 0 4px 24px rgba(0,0,0,0.5)',
+        'elevated': '0 1px 0 rgba(255,255,255,0.06) inset, 0 16px 48px rgba(0,0,0,0.6)',
+      },
+      backgroundImage: {
+        'grain': "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E\")",
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        'hero-glow': 'radial-gradient(ellipse 80% 60% at 50% -10%, rgba(0,212,255,0.08) 0%, transparent 70%)',
+        'section-fade': 'linear-gradient(to bottom, transparent, rgba(7,10,14,0.8), #070A0E)',
+      },
+      animation: {
+        'ticker': 'ticker 20s linear infinite',
+        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'float': 'float 6s ease-in-out infinite',
+        'glow-pulse': 'glowPulse 3s ease-in-out infinite',
+        'scan': 'scan 3s linear infinite',
+      },
+      keyframes: {
+        ticker: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' },
+        },
+        float: {
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(-8px)' },
+        },
+        glowPulse: {
+          '0%, 100%': { opacity: '1' },
+          '50%': { opacity: '0.5' },
+        },
+        scan: {
+          '0%': { backgroundPosition: '0 -100%' },
+          '100%': { backgroundPosition: '0 100%' },
+        },
+      },
+      transitionTimingFunction: {
+        'spring': 'cubic-bezier(0.34, 1.56, 0.64, 1)',
+        'smooth': 'cubic-bezier(0.4, 0, 0.2, 1)',
+        'expo-out': 'cubic-bezier(0.16, 1, 0.3, 1)',
+      },
+    },
+  },
+  plugins: [],
+}
+
+export default config
